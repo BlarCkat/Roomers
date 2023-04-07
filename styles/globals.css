@@ -1,3 +1,11 @@
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import './tailwindcss.css';
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+:root, html, body{
+  height: 100%;
+}
+
