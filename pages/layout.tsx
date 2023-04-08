@@ -1,4 +1,4 @@
-import NavBarComponent from "../components/navbar";
+import NavBarComponent from "../components/nav/navbar";
 
 export const metadata = {
     title: 'Roomers',
