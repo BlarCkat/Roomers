@@ -1,3 +1,5 @@
+'use clent';
+
 import Container from "../container";
 import Logo from "../logo/logo";
 import Search from "../search/searchbar";
