@@ -1,5 +1,6 @@
 
 import ClientOnly from "../components/clientOnly";
+import Modal from "../components/modal/modal";
 import NavBarComponent from "../components/nav/navbar";
 
 export const metadata = {
@@ -14,6 +15,7 @@ const LayoutView = ({children}:{children: React.ReactNode}) => {
         <html lang="en">
             <body>
                 <ClientOnly>
+                    <Modal isOpen title="Log In"/>
                     <NavBarComponent/>
                 </ClientOnly>
                 {children}
