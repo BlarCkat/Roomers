@@ -1,8 +1,10 @@
+'use client';
+
 import { IconType } from "react-icons/lib";
 
 interface ButtonProps {
     onClick: (e: React.MouseEvent<HTMLButtonElement>)=> void;
-    label: string;
+    label?: string;
     disabled?: boolean;
     outline?: boolean;
     small?: boolean;
@@ -16,11 +18,11 @@ const Button: React.FC<ButtonProps> = ({
     disabled,
     outline,
     small,
-    icon
+    icon: Icon
 }) => {
     return ( 
         <>
-        <button className={`
+        <button disabled={disabled} onClick={onClick} className={`
         relative
         disabled:opacity-70
         disabled:cursor-not-allowed
@@ -30,9 +32,18 @@ const Button: React.FC<ButtonProps> = ({
         w-full
         ${outline ? 'bg-white': 'bg-blue-500'}
         ${outline ? 'border-black': 'border-blue-500'}
-        
+        ${outline ? 'text-black': 'text-white'}
+        ${small ? 'py-1': 'py-3'}
+        ${small ? 'text-sm': 'text-md'}
+        ${small ? 'font-light': 'font-semibold'}
+        ${small ? 'border-[1px]': 'border-2'}
         `}
-        >{label}</button>
+        
+        >
+        {Icon && (
+            <Icon size={24} className="absolute right-4"/>
+        )}    
+        {label}</button>
         </>
      );
 }
